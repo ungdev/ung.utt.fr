@@ -1,0 +1,14 @@
+.arrowoffset {
+  font-size : 80% !important;
+  position : relative;
+  bottom : 3px;
+}
+
+.logo {
+  height: 30px;
+}
+
+.ant-menu-item-group-title {
+  border-bottom: solid 1px #ffffff;
+  color: white !important;
+}
