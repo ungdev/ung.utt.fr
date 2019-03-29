@@ -4,3 +4,7 @@
   width: 100%;
   justify-content: space-between;
 }
+
+.panel-more-info p {
+  margin : 0px 10px;
+}

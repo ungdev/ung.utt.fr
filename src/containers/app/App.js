@@ -13,14 +13,36 @@ import Gameutt from '../event/Gameutt'
 
 const { Content, Footer } = Layout;
 
-
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      mobile : window.innerWidth < 1000
+    }
+  }
+
+  handleResize = () => {
+    if (window.innerWidth < 1000) {
+      this.setState({mobile:true})
+    }
+    else {
+      this.setState({mobile:false})
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener(
+      "resize",
+      this.handleResize
+    )
+  }
+
   render() {
     return (
       <Layout>
         <Router>
           <NavbarDiv /> 
-          <Content className='white' style={{minHeight:'900px'}}>
+          <Content className='white' style={{minHeight:'900px', marginTop : this.state.mobile ? '64px' : '0px'}}>
             <Switch>
               <Route path='/' exact component={Home} />
               <Route path='/who' exact component={Who} />

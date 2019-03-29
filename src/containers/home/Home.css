@@ -8,8 +8,10 @@
 
 .text-content {
   margin : 30px 0;
-  padding-right: 50px;
-  color : rgba(255,255,255, 0.8)
+  padding : 0 20px 0 20px;
+  color : rgba(255,255,255, 0.9);
+  text-shadow: 0px 0px 15px black; 
+  text-align : center;
 }
 
 .home-card {
@@ -19,10 +21,10 @@
 }
 
 .card-title {
-  padding-top : 60px;
-  padding-left: 15px;
+  padding : 60px 15px 0px 15px;
   color : #fff;
-  text-shadow: 1px 1px 15px black; 
+  text-shadow: 0px 0px 25px black; 
+  text-align : center;
 }
 
 .card-img {
@@ -53,5 +55,17 @@
 @media (max-width : 450px) {
   .home-card-start {
     min-height: 400px;
+  }
+}
+
+@media (max-width : 620px) {
+  .home-card-start {
+    min-height: 370px;
+  }
+}
+
+@media (max-width : 344px) {
+  .home-card-start {
+    min-height: 430px;
   }
 }
