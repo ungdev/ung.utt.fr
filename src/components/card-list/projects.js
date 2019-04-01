@@ -15,10 +15,10 @@ export const projects = [
   },
   {
     id: 3,
-    title: 'Site du Gala + Application Mobile (gala.utt.fr)',
+    title: 'Site du Gala + Application Mobile + Application TV (gala.utt.fr)',
     tech: 'React.js, Ionic 3, Angular 4',
     referents: 'Arnaud Dufour et Valentin Peltier',
-    description: "Informations sur l'événement. Notifications. Plan d'accès, plan du gala. Liste des événements de la soirée."
+    description: "Informations sur l'événement. Notifications. Plan d'accès, plan du gala. Liste des événements de la soirée. Pendant l'événement, l'application TV permet l'affichage en temps réel du déroulement du Gala."
   },
   {
     id: 4,

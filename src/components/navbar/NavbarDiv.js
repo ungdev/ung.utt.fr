@@ -25,11 +25,13 @@ class NavbarDiv extends Component {
   }
 
   collapseMenu = () => {
-    if (this.state.collapsed) {
-      this.setState({collapsed:false})
-    }
-    else {
-      this.setState({collapsed:true})
+    if (this.state.mobile) {
+      if (this.state.collapsed) {
+        this.setState({collapsed:false})
+      }
+      else {
+        this.setState({collapsed:true})
+      }
     }
   }
 
@@ -40,36 +42,37 @@ class NavbarDiv extends Component {
     )
   }
 
+
   render () {
     return(
       <Layout.Header
         style={{padding:0, display: 'flex', justifyContent: this.state.mobile ? 'flex-start' : 'center', alignItems: 'center', position : this.state.mobile ? 'fixed' : '', width : '100%', zIndex : '100'}}
       >
         <Icon
-         type="menu-unfold" 
+         type= {this.state.collapsed ? "menu-unfold" : "menu-fold"}
          style={{color:'white', fontSize:'30px', marginLeft: '30px', display: this.state.mobile ? '' : 'none'}}
          onClick={this.collapseMenu}
         />
-        <img src={logoUNG} className='logo' style={{display: this.state.mobile ? '' : 'none'}} alt='UNG'/>
+        <Link to='/'><img src={logoUNG} className='logo' style={{display: this.state.mobile ? '' : 'none'}} alt='UNG'/></Link>
         <Menu
           theme="dark"
           mode={this.state.mobile ? "inline" : "horizontal"}
           style={{lineHeight:'64px', backgroundColor:'#001529', zIndex:'99', position: this.state.mobile ? 'fixed' : 'absolute', top: this.state.mobile ? '64px' : '0px', display : this.state.collapsed ? 'none' : ''}}
         >
-          <Menu.Item><Link to='/'><Icon type="home" theme="filled" />Accueil</Link></Menu.Item>
-          <Menu.Item><Link to='/who'><Icon type="question-circle" theme="filled" /> Qui sommes-nous ?</Link></Menu.Item>
+          <Menu.Item onClick={this.collapseMenu}><Link to='/'><Icon type="home" theme="filled" />Accueil</Link></Menu.Item>
+          <Menu.Item onClick={this.collapseMenu}><Link to='/who'><Icon type="question-circle" theme="filled" /> Qui sommes-nous ?</Link></Menu.Item>
           <Menu.SubMenu title={<span className="submenu-title-wrapper"><Icon type="api" theme="filled" /> Technique</span>}>
-            <Menu.Item key='1'><Link to='/tech/sia'>SIA</Link></Menu.Item>
-            <Menu.Item key='2'><Link to='/tech/etu'>Site étu</Link></Menu.Item>
-            <Menu.Item key='3'><Link to='/tech/dev'>Projets dév</Link></Menu.Item>
+            <Menu.Item onClick={this.collapseMenu} key='1'><Link to='/tech/sia'>SIA</Link></Menu.Item>
+            <Menu.Item onClick={this.collapseMenu} key='2'><Link to='/tech/etu'>Site étu</Link></Menu.Item>
+            <Menu.Item onClick={this.collapseMenu} key='3'><Link to='/tech/dev'>Projets dév</Link></Menu.Item>
           </Menu.SubMenu>
           <Menu.SubMenu title={<span className="submenu-title-wrapper"><Icon type="project" theme="filled" /> Evenementiel</span>}>
-            <Menu.Item key='4'><a href='http://arena.utt.fr'>UTT Arena</a></Menu.Item>
-            <Menu.Item key='5'><Link to='/event/gameutt'>Game UTT</Link></Menu.Item>
-            <Menu.Item key='6'><Link to='/event/barcamp'>Barcamps</Link></Menu.Item>
+            <Menu.Item onClick={this.collapseMenu} key='4'><a href='http://arena.utt.fr'>UTT Arena</a></Menu.Item>
+            <Menu.Item onClick={this.collapseMenu}key='5'><Link to='/event/gameutt'>Game UTT</Link></Menu.Item>
+            <Menu.Item onClick={this.collapseMenu}key='6'><Link to='/event/barcamp'>Barcamps</Link></Menu.Item>
           </Menu.SubMenu>
-          <Menu.Item><Link to='/comingsoon'><Icon type="alert" theme="filled" /> Prochains événements</Link></Menu.Item>
-          <Menu.Item><Link to='/contact'><Icon type="mail" theme="filled" /> Nous contacter</Link></Menu.Item>
+          <Menu.Item onClick={this.collapseMenu}><Link to='/comingsoon'><Icon type="alert" theme="filled" /> Prochains événements</Link></Menu.Item>
+          <Menu.Item onClick={this.collapseMenu}><Link to='/contact'><Icon type="mail" theme="filled" /> Nous contacter</Link></Menu.Item>
         </Menu>
         { ! this.state.collapsed && this.state.mobile && <div style={{width : window.innerWidth, height : window.innerHeight, backgroundColor : 'rgba(0,0,0,0.4)', position: "fixed", zIndex : '98', top : '64px'}} onClick={this.collapseMenu}></div>}
       </Layout.Header>

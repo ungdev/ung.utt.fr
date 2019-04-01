@@ -6,6 +6,9 @@ import {Link} from 'react-router-dom'
 import '../app/App.css'
 import CardList from '../../components/card-list/CardList'
 import projects from '../../components/card-list/projects'
+import uaCard from '../../assets/ua.png'
+import siaCard from '../../assets/sia.png'
+import etuCard from '../../assets/etuutt.png'
 
 class Home extends Component {
   render () {
@@ -20,15 +23,15 @@ class Home extends Component {
         </div>
         <div className='content'>
           <div className='flex cards'>
-          <Card title="SIA" hoverable bordered={true} style={{margin : '10px 10px'}} cover={<img alt="example" src="https://via.placeholder.com/400x200" />}>
+          <Card title="SIA" hoverable bordered={true} style={{margin : '10px 10px'}} cover={<img alt="SIA" src={siaCard} />}>
             <p>Le Système d'Information des Associations de l'UTT.</p>
             <Button><Link to='/tech/sia'>En savoir plus</Link></Button>
           </Card>
-          <Card title="UTT Arena" hoverable bordered={true} style={{margin : '10px 10px'}} cover={<img alt="example" src="https://via.placeholder.com/400x200" />}>
+          <Card title="UTT Arena" hoverable bordered={true} style={{margin : '10px 10px'}} cover={<img alt="UTT Arena" src={uaCard} />}>
             <p>Une LAN de 450 joueurs au Festival des Jeux de Troyes.</p>
             <Button><a href='https://arena.utt.fr'>En savoir plus</a></Button>
           </Card>
-          <Card title="Site étudiant" hoverable bordered={true} style={{margin : '10px 10px'}} cover={<img alt="example" src="https://via.placeholder.com/400x200" />}>
+          <Card title="Site étudiant" hoverable bordered={true} style={{margin : '10px 10px'}} cover={<img alt="Site étudiant" src={etuCard} />}>
             <p>Le site à destination de tous les étudiants de l'UTT.</p>
             <Button><Link to='/tech/etu'>En savoir plus</Link></Button>
           </Card>
