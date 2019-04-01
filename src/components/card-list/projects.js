@@ -2,8 +2,8 @@ export const projects = [
   {
     id: 1,
     title: 'Site étudiant UTT (etu.utt.fr)',
-    tech:'Symfony 2',
-    referents: 'Adrien Rabian, Arnaud Dufour',
+    tech:'Symfony 3',
+    referents: "Adrien Rabian, Arnaud Dufour, Christian d'Autume, Alexandre Guenault",
     description: "Site des étudiants de l'UTT. Offre des services aux étudiants. Daymails. API permettant l'utilisation du compte étu pour s'authentifier aux autres applications."
   },
   {
@@ -46,7 +46,7 @@ export const projects = [
 export const projectsDoing = [
   {
     id: 1,
-    title: "Application UTT Campus",
+    title: "Application MyUTT",
     tech: 'React Native',
     referents: "Arnaud Dufour",
     description: "Application fusion entre le site étudiant, l'ENT et Elearning."

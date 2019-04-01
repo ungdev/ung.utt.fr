@@ -42,7 +42,9 @@ class NavbarDiv extends Component {
 
   render () {
     return(
-      <Layout.Header style={{padding:0, display: 'flex', justifyContent: this.state.mobile ? 'flex-start' : 'center', alignItems: 'center', position : this.state.mobile ? 'fixed' : '', width : '100%', zIndex : '100'}}>
+      <Layout.Header
+        style={{padding:0, display: 'flex', justifyContent: this.state.mobile ? 'flex-start' : 'center', alignItems: 'center', position : this.state.mobile ? 'fixed' : '', width : '100%', zIndex : '100'}}
+      >
         <Icon
          type="menu-unfold" 
          style={{color:'white', fontSize:'30px', marginLeft: '30px', display: this.state.mobile ? '' : 'none'}}
@@ -52,7 +54,7 @@ class NavbarDiv extends Component {
         <Menu
           theme="dark"
           mode={this.state.mobile ? "inline" : "horizontal"}
-          style={{lineHeight:'64px', backgroundColor:'#001529', zIndex:'99', position: this.state.mobile ? 'fixed' : 'absolute', top: this.state.mobile ? '64px' : '0px', display: this.state.collapsed ? 'none' : ''}}
+          style={{lineHeight:'64px', backgroundColor:'#001529', zIndex:'99', position: this.state.mobile ? 'fixed' : 'absolute', top: this.state.mobile ? '64px' : '0px', display : this.state.collapsed ? 'none' : ''}}
         >
           <Menu.Item><Link to='/'><Icon type="home" theme="filled" />Accueil</Link></Menu.Item>
           <Menu.Item><Link to='/who'><Icon type="question-circle" theme="filled" /> Qui sommes-nous ?</Link></Menu.Item>
@@ -69,7 +71,7 @@ class NavbarDiv extends Component {
           <Menu.Item><Link to='/comingsoon'><Icon type="alert" theme="filled" /> Prochains événements</Link></Menu.Item>
           <Menu.Item><Link to='/contact'><Icon type="mail" theme="filled" /> Nous contacter</Link></Menu.Item>
         </Menu>
-        { ! this.state.collapsed && this.state.mobile && <div style={{width : window.innerWidth, height : window.innerHeight, backgroundColor : 'rgba(0,0,0,0.2)', position: "fixed", zIndex : '98', top : '64px'}} onClick={this.collapseMenu}></div>}
+        { ! this.state.collapsed && this.state.mobile && <div style={{width : window.innerWidth, height : window.innerHeight, backgroundColor : 'rgba(0,0,0,0.4)', position: "fixed", zIndex : '98', top : '64px'}} onClick={this.collapseMenu}></div>}
       </Layout.Header>
     );
   }

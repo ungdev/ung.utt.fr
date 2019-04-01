@@ -13,7 +13,6 @@ const CardList = props => {
               <p>{listItem.description}</p>
               <div className ='panel-more-info'>
                 <p><strong>Technos utilisées : </strong>{listItem.tech}</p>
-                <p><strong>Responsable(s) : </strong>{listItem.referents}</p>
               </div>
             </Collapse.Panel>
           )
