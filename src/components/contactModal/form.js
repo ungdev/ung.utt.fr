@@ -1,8 +1,8 @@
 import {
-  Modal, Form, Input, Menu, Button
+  Modal, Form, Input
 } from 'antd'
 import './form.css'
-import React, { Component } from 'react'
+import React from 'react'
 import TextArea from 'antd/lib/input/TextArea'
 import axios from 'axios'
 import {notification} from 'antd'

@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import {Layout, Menu, Icon} from 'antd'
 import logoUNG from '../../assets/logo.png'
 import './NavbarDiv.css'
-import CollectionsPage from '../contactModal/form'
 
 
 class NavbarDiv extends Component {
