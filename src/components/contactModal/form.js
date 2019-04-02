@@ -6,6 +6,7 @@ import React, { Component } from 'react'
 import TextArea from 'antd/lib/input/TextArea'
 import axios from 'axios'
 
+const slack = axios.create({baseURL : process.env.REACT_APP_SLACK_BASEURL})
 
 const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
   // eslint-disable-next-line
@@ -58,14 +59,19 @@ class CollectionsPage extends React.Component {
         return;
       }
       console.log('Received values of form: ', values);
-      let result = await axios.post(
-        process.env.REACT_APP_SLACK_URL,
-        {
-          text : `Nom : ${values.name} \n Adresse mail : ${values.email} \n Message : ${values.message}`
-        },
-
-      );
-      console.log(result);
+      console.log(process.env.REACT_APP_SLACK_URL)
+      try {
+        let result = await slack.post(
+          process.env.REACT_APP_SLACK_CHANNEL,
+          {
+            text : `Nom : ${values.name} \n Adresse mail : ${values.email} \n Message : ${values.message}`
+          },
+          {
+            headers : {'Content-type': 'application/json'}
+          }
+        );
+      }
+      catch(err) {console.log(err)}
       form.resetFields();
       this.props.handleCancel();
     });
