@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {Layout, Menu, Icon} from 'antd'
 import logoUNG from '../../assets/logo.png'
 import './NavbarDiv.css'
+import CollectionsPage from '../contactModal/form'
 
 
 class NavbarDiv extends Component {
@@ -72,7 +73,7 @@ class NavbarDiv extends Component {
             <Menu.Item onClick={this.collapseMenu}key='6'><Link to='/event/barcamp'>Barcamps</Link></Menu.Item>
           </Menu.SubMenu>
           <Menu.Item onClick={this.collapseMenu}><Link to='/comingsoon'><Icon type="alert" theme="filled" /> Prochains événements</Link></Menu.Item>
-          <Menu.Item onClick={this.collapseMenu}><Link to='/contact'><Icon type="mail" theme="filled" /> Nous contacter</Link></Menu.Item>
+          <Menu.Item onClick={() => {this.collapseMenu(); this.props.showModal()}}><Icon type='mail' theme='filled' /> Nous contacter</Menu.Item>
         </Menu>
         { ! this.state.collapsed && this.state.mobile && <div style={{width : window.innerWidth, height : window.innerHeight, backgroundColor : 'rgba(0,0,0,0.4)', position: "fixed", zIndex : '98', top : '64px'}} onClick={this.collapseMenu}></div>}
       </Layout.Header>

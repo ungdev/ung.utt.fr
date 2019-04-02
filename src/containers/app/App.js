@@ -10,6 +10,7 @@ import Sia from '../tech/Sia'
 import Etu from '../tech/Etu'
 import Projects from '../tech/Projects'
 import Gameutt from '../event/Gameutt'
+import ContactModal from '../../components/contactModal/form'
 
 const { Content, Footer } = Layout;
 
@@ -37,11 +38,20 @@ class App extends Component {
     )
   }
 
+  showModal = () => {
+    this.setState({ modalVisible: true });
+  }
+
+  handleCancel = () => {
+    this.setState({ modalVisible: false});
+  }
+
   render() {
     return (
       <Layout>
         <Router>
-          <NavbarDiv /> 
+          <NavbarDiv showModal = {this.showModal}/> 
+          <ContactModal visible = {this.state.modalVisible} handleCancel = {this.handleCancel}/>
           <Content className='white' style={{minHeight:'900px', marginTop : this.state.mobile ? '64px' : '0px'}}>
             <Switch>
               <Route path='/' exact component={Home} />
