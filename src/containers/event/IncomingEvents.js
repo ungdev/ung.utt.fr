@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {Icon} from 'antd'
 
-class Barcamps extends Component {
+class IncomingEvents extends Component {
   render() {
     return (
       <div className="content-direct-start">
@@ -13,4 +13,4 @@ class Barcamps extends Component {
   }
 }
 
-export default Barcamps
+export default IncomingEvents

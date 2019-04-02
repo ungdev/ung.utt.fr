@@ -10,6 +10,8 @@ import Sia from '../tech/Sia'
 import Etu from '../tech/Etu'
 import Projects from '../tech/Projects'
 import Gameutt from '../event/Gameutt'
+import IncomingEvents from '../event/IncomingEvents'
+import Barcamps from '../event/Barcamps'
 import ContactModal from '../../components/contactModal/form'
 
 const { Content, Footer } = Layout;
@@ -60,6 +62,8 @@ class App extends Component {
               <Route path='/tech/etu' exact component={Etu} />
               <Route path='/tech/dev' exact component={Projects} />
               <Route path='/event/gameutt' exact component={Gameutt} />
+              <Route path='/event/barcamp' exact component={Barcamps} />
+              <Route path='/comingsoon' exact component={IncomingEvents} />
               <Redirect from='*' to ='/' />
             </Switch>
           </Content>
