@@ -58,20 +58,18 @@ class CollectionsPage extends React.Component {
       if (err) {
         return;
       }
-      console.log('Received values of form: ', values);
-      console.log(process.env.REACT_APP_SLACK_URL)
       try {
         let result = await slack.post(
           process.env.REACT_APP_SLACK_CHANNEL,
           {
-            text : `Nom : ${values.name} \n Adresse mail : ${values.email} \n Message : ${values.message}`
+            text : `Message envoyé depuis ung.utt.fr \n Nom : ${values.name} \n Adresse mail : ${values.email} \n Message : ${values.message}`
           },
           {
-            headers : {'Content-type': 'application/json'}
+            headers : {'Content-type': 'application/x-www-form-urlencoded'}
           }
         );
       }
-      catch(err) {console.log(err)}
+      catch(err) {console.error(err)}
       form.resetFields();
       this.props.handleCancel();
     });
