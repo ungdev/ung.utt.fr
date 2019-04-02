@@ -9,7 +9,7 @@ export const projects = [
   {
     id: 2,
     title: 'Flux et Flux Mobile',
-    tech: 'React.js, Sails.js, Finebase, Java',
+    tech: 'React.js, Sails.js, Java',
     referents: 'Aurélien Labate et Antoine Prudhomme',
     description: 'Appli web en temps réel pour le Gala. Chat, gestion des bars, états des stocks, notifications push...'
   },
