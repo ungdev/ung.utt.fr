@@ -5,6 +5,7 @@ import './form.css'
 import React, { Component } from 'react'
 import TextArea from 'antd/lib/input/TextArea'
 import axios from 'axios'
+import {notification} from 'antd'
 
 const slack = axios.create({baseURL : process.env.REACT_APP_SLACK_BASEURL})
 
@@ -68,10 +69,28 @@ class CollectionsPage extends React.Component {
             headers : {'Content-type': 'application/x-www-form-urlencoded'}
           }
         );
+        if (result.status === 200) {
+          notification['success']({
+            message: 'Message envoyé !',
+            description: 'Nous vous répondrons dès que possible.',
+          });
+        }
+        else {
+          notification['error']({
+            message: 'Une erreur est survenue',
+            description: `Erreur ${result.status} : ${result.statusText}`,
+          });
+        }
       }
-      catch(err) {console.error(err)}
+      catch(err) {
+        notification['error']({
+          message: 'Une erreur est survenue',
+          description: '',
+        });
+      }
       form.resetFields();
       this.props.handleCancel();
+
     });
   }
 
