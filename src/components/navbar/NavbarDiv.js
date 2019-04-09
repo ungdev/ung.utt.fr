@@ -66,7 +66,7 @@ class NavbarDiv extends Component {
             <Menu.Item onClick={this.collapseMenu} key='2'><Link to='/tech/etu'>Site étu</Link></Menu.Item>
             <Menu.Item onClick={this.collapseMenu} key='3'><Link to='/tech/dev'>Projets dév</Link></Menu.Item>
           </Menu.SubMenu>
-          <Menu.SubMenu title={<span className="submenu-title-wrapper"><Icon type="project" theme="filled" /> Evenementiel</span>}>
+          <Menu.SubMenu title={<span className="submenu-title-wrapper"><Icon type="project" theme="filled" /> Événementiel</span>}>
             <Menu.Item onClick={this.collapseMenu} key='4'><a href='http://arena.utt.fr'>UTT Arena</a></Menu.Item>
             <Menu.Item onClick={this.collapseMenu}key='5'><Link to='/event/gameutt'>Game UTT</Link></Menu.Item>
             <Menu.Item onClick={this.collapseMenu}key='6'><Link to='/event/barcamp'>Barcamps</Link></Menu.Item>

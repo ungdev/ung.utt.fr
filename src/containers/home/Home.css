@@ -22,8 +22,7 @@
 
 .card-title {
   padding : 60px 15px 0px 15px;
-  color : #fff;
-  text-shadow: 0px 0px 25px black; 
+  color : #fff; 
   text-align : center;
 }
 
@@ -43,6 +42,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 0 20px 0 #000;
 }
 
 .a-intro_shadow {
